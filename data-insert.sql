@@ -54,7 +54,7 @@ INSERT INTO product VALUES(14, 'Lipstick', 'Long-lasting lipstick for beautiful 
 
 INSERT INTO product VALUES(15, 'Massage Oil', 'Specialized massage oil for lymphatic drainage massage.', 25, 60.0);
 
-INSERT INTO product VALUES(16, 'Cervical Pillow', 'Pillow for cervical spine support during therapy.', 10, 50.0);
+INSERT INTO product VALUES(16, 'Cervgical Pillow', 'Pillow for cervical spine support during therapy.', 10, 50.0);
 
 INSERT INTO product VALUES(17, 'Eyebrow Pencil', 'Professional eyebrow pencil for shaping and grooming.', 30, 35.0);
 
@@ -93,61 +93,63 @@ INSERT INTO product VALUES(34, 'Depilatory Wax Kit', 'Professional kit for effec
 
 
 # customer table
-INSERT INTO customer VALUES(1,"Vira", "380938594036", "viravirvira@gmail.com", "Khreshchatyk, 22, ap. 56");
-INSERT INTO customer VALUES(2, "Serhii", "380398762938", "serhiiiiihello@gmail.com", "Krakivska, 34, ap. 87");
-INSERT INTO customer VALUES(3, "Anastasia", "380648671234", "nastiusha@gmail.com", "Nova, 98, ap.143");
-INSERT INTO customer VALUES(4, "Olia", "380483771234", "yaolia@gmail.com", "Stara, 23, ap.43");
-INSERT INTO customer VALUES(5, "Tetiana", "380649303234", "tetiana@gmail.com", "Kalyna, 63, ap.346");
-INSERT INTO customer VALUES(6, "Ariana", "380941405839", "queenofthislife@gmail.com", "Koloskova, 29, ap.235");
-INSERT INTO customer VALUES(7, "Nadia", "380946405839", "thegreatestpoet@gmail.com", "Skrypnika, 3, ap.25");
-INSERT INTO customer VALUES(8, "Sasha", "380946404589", "sashok@gmail.com", "Lobanovskoho, 37, ap.125");
-INSERT INTO customer VALUES(9, "Ania", "380940193589", "aniabeauty@gmail.com", "Pulia, 3, ap.231");
-INSERT INTO customer VALUES(10, "Dmytro", "380501234567", "dmytro@gmail.com", "Shevchenka, 15, ap. 72");
-INSERT INTO customer VALUES(11, "Kateryna", "380509876543", "kate@yahoo.com", "Heroiv Pratsi, 42, ap. 103");
-INSERT INTO customer VALUES(12, "Andrii", "380504561237", "andrii.andrii@gmail.com", "Chervonozavodska, 87, ap. 54");
-INSERT INTO customer VALUES(13, "Iryna", "380503214567", "iryna.iryna@gmail.com", "Zelena, 18, ap. 23");
-INSERT INTO customer VALUES(14, "Pavlo", "380502345678", "pavlo.pavlo@gmail.com", "Naukova, 76, ap. 45");
-INSERT INTO customer VALUES(15, "Oksana", "380501234567", "oksana.oksana@gmail.com", "Halytska, 33, ap. 12");
-INSERT INTO customer VALUES(16, "Mykola", "380509876543", "mykola.mykola@gmail.com", "Sichovykh Striltsiv, 56, ap. 89");
-INSERT INTO customer VALUES(17, "Yulia", "380504561237", "yulia.yulia@gmail.com", "Kharkivska, 24, ap. 32");
-INSERT INTO customer VALUES(18, "Roman", "380503214567", "roman.roman@gmail.com", "Soborna, 49, ap. 76");
-INSERT INTO customer VALUES(19, "Mariia", "380502345678", "mariia.mariia@gmail.com", "Zarichna, 11, ap. 67");
-INSERT INTO customer VALUES(20, "Oleh", "380501234567", "oleh.oleh@gmail.com", "Dniprovska, 30, ap. 44");
-INSERT INTO customer VALUES(21, "Nataliia", "380509876543", "nataliia.nataliia@gmail.com", "Yaroslavska, 15, ap. 98");
-INSERT INTO customer VALUES(22, "Vitalii", "380504561237", "vitalii.vitalii@gmail.com", "Bohdana Khmelnytskoho, 76, ap. 21");
-INSERT INTO customer VALUES(23, "Valeriia", "380503214567", "valeriia.valeriia@gmail.com", "Hrushevskoho, 42, ap. 34");
-INSERT INTO customer VALUES(24, "Yaroslav", "380502345678", "yaroslav.yaroslav@gmail.com", "Vynnychenka, 27, ap. 56");
-INSERT INTO customer VALUES(25, "Halyna", "380501234567", "halyna.halyna@gmail.com", "Suvorova, 19, ap. 67");
-INSERT INTO customer VALUES(26, "Ihor", "380509876543", "ihor.ihor@gmail.com", "Poltavskoho Shliakhu, 33, ap. 12");
-INSERT INTO customer VALUES(27, "Yevheniia", "380504561237", "yevheniia.yevheniia@gmail.com", "Franka, 53, ap. 76");
-INSERT INTO customer VALUES(28, "Danylo", "380503214567", "danylo.danylo@gmail.com", "Shevchenka, 64, ap. 89");
-INSERT INTO customer VALUES(29, "Marina", "380502345678", "marina.marina@gmail.com", "Horodotska, 22, ap. 45");
-INSERT INTO customer VALUES(30, "Viktor", "380501234567", "viktor.viktor@gmail.com", "Tobilevycha, 37, ap. 98");
-INSERT INTO customer VALUES(31, "Nadiia", "380509876543", "nadiia.nadiia@gmail.com", "Zelena, 15, ap. 67");
-INSERT INTO customer VALUES(32, "Taras", "380504561237", "taras.taras@gmail.com", "Khmelnytskoho, 76, ap. 21");
-INSERT INTO customer VALUES(33, "Khrystyna", "380503214567", "khrystyna.khrystyna@gmail.com", "Hrushevskoho, 42, ap. 34");
-INSERT INTO customer VALUES(34, "Vasyl", "380502345678", "vasyl.vasyl@gmail.com", "Vynnychenka, 27, ap. 56");
-INSERT INTO customer VALUES(35, "Liliia", "380501234567", "liliia.liliia@gmail.com", "Suvorova, 19, ap. 67");
-INSERT INTO customer VALUES(36, "Bogdan", "380509876543", "bogdan.bogdan@gmail.com", "Poltavskoho Shliakhu, 33, ap. 12");
+INSERT INTO customer VALUES(1,'Vira', '380938594036', 'viravirvira@gmail.com', 'Khreshchatyk, 22, ap. 56');
+INSERT INTO customer VALUES(2, 'Serhii', '380398762938', 'serhiiiiihello@gmail.com', 'Krakivska, 34, ap. 87');
+INSERT INTO customer VALUES(3, 'Anastasia', '380648671234', 'nastiusha@gmail.com', 'Nova, 98, ap.143');
+INSERT INTO customer VALUES(4, 'Olia', '380483771234', 'yaolia@gmail.com', 'Stara, 23, ap.43');
+INSERT INTO customer VALUES(5, 'Tetiana', '380649303234', 'tetiana@gmail.com', 'Kalyna, 63, ap.346');
+INSERT INTO customer VALUES(6, 'Ariana', '380941405839', 'queenofthislife@gmail.com', 'Koloskova, 29, ap.235');
+INSERT INTO customer VALUES(7, 'Nadia', '380946405839', 'thegreatestpoet@gmail.com', 'Skrypnika, 3, ap.25');
+INSERT INTO customer VALUES(8, 'Sasha', '380946404589', 'sashok@gmail.com', 'Lobanovskoho, 37, ap.125');
+INSERT INTO customer VALUES(9, 'Ania', '380940193589', 'aniabeauty@gmail.com', 'Pulia, 3, ap.231');
+INSERT INTO customer VALUES(10, 'Dmytro', '380501234567', 'dmytro@gmail.com', 'Shevchenka, 15, ap. 72');
+INSERT INTO customer VALUES(11, 'Kateryna', '380509876543', 'kate@yahoo.com', 'Heroiv Pratsi, 42, ap. 103');
+INSERT INTO customer VALUES(12, 'Andrii', '380504561237', 'andrii.andrii@gmail.com', 'Chervonozavodska, 87, ap. 54');
+INSERT INTO customer VALUES(13, 'Iryna', '380503214567', 'iryna.iryna@gmail.com', 'Zelena, 18, ap. 23');
+INSERT INTO customer VALUES(14, 'Pavlo', '380502345678', 'pavlo.pavlo@gmail.com', 'Naukova, 76, ap. 45');
+INSERT INTO customer VALUES(15, 'Oksana', '380501234567', 'oksana.oksana@gmail.com', 'Halytska, 33, ap. 12');
+INSERT INTO customer VALUES(16, 'Mykola', '380509876543', 'mykola.mykola@gmail.com', 'Sichovykh Striltsiv, 56, ap. 89');
+INSERT INTO customer VALUES(17, 'Yulia', '380504561237', 'yulia.yulia@gmail.com', 'Kharkivska, 24, ap. 32');
+INSERT INTO customer VALUES(18, 'Roman', '380503214567', 'roman.roman@gmail.com', 'Soborna, 49, ap. 76');
+INSERT INTO customer VALUES(19, 'Mariia', '380502345678', 'mariia.mariia@gmail.com', 'Zarichna, 11, ap. 67');
+INSERT INTO customer VALUES(20, 'Oleh', '380501234567', 'oleh.oleh@gmail.com', 'Dniprovska, 30, ap. 44');
+INSERT INTO customer VALUES(21, 'Nataliia', '380509876543', 'nataliia.nataliia@gmail.com', 'Yaroslavska, 15, ap. 98');
+INSERT INTO customer VALUES(22, 'Vitalii', '380504561237', 'vitalii.vitalii@gmail.com', 'Bohdana Khmelnytskoho, 76, ap. 21');
+INSERT INTO customer VALUES(23, 'Valeriia', '380503214567', 'valeriia.valeriia@gmail.com', 'Hrushevskoho, 42, ap. 34');
+INSERT INTO customer VALUES(24, 'Yaroslav', '380502345678', 'yaroslav.yaroslav@gmail.com', 'Vynnychenka, 27, ap. 56');
+INSERT INTO customer VALUES(25, 'Halyna', '380501234567', 'halyna.halyna@gmail.com', 'Suvorova, 19, ap. 67');
+INSERT INTO customer VALUES(26, 'Ihor', '380509876543', 'ihor.ihor@gmail.com', 'Poltavskoho Shliakhu, 33, ap. 12');
+INSERT INTO customer VALUES(27, 'Yevheniia', '380504561237', 'yevheniia.yevheniia@gmail.com', 'Franka, 53, ap. 76');
+INSERT INTO customer VALUES(28, 'Danylo', '380503214567', 'danylo.danylo@gmail.com', 'Shevchenka, 64, ap. 89');
+INSERT INTO customer VALUES(29, 'Marina', '380502345678', 'marina.marina@gmail.com', 'Horodotska, 22, ap. 45');
+INSERT INTO customer VALUES(30, 'Viktor', '380501234567', 'viktor.viktor@gmail.com', 'Tobilevycha, 37, ap. 98');
+INSERT INTO customer VALUES(31, 'Nadiia', '380509876543', 'nadiia.nadiia@gmail.com', 'Zelena, 15, ap. 67');
+INSERT INTO customer VALUES(32, 'Taras', '380504561237', 'taras.taras@gmail.com', 'Khmelnytskoho, 76, ap. 21');
+INSERT INTO customer VALUES(33, 'Khrystyna', '380503214567', 'khrystyna.khrystyna@gmail.com', 'Hrushevskoho, 42, ap. 34');
+INSERT INTO customer VALUES(34, 'Vasyl', '380502345678', 'vasyl.vasyl@gmail.com', 'Vynnychenka, 27, ap. 56');
+INSERT INTO customer VALUES(35, 'Liliia', '380501234567', 'liliia.liliia@gmail.com', 'Suvorova, 19, ap. 67');
+INSERT INTO customer VALUES(36, 'Bogdan', '380509876543', 'bogdan.bogdan@gmail.com', 'Poltavskoho Shliakhu, 33, ap. 12');
+
 
 # employee table
-INSERT INTO employee VALUES (1, "Gaiova Kateryna", '380956471324', "katerynag@gmail.com", "Junior", 25000);
-INSERT INTO employee VALUES (2, "Lyskova Mariia", '380953671324', "lyskovam@gmail.com", "Middle", 30000);
-INSERT INTO employee VALUES (3, "Melnyk Olesia", '380957451383', "olesiamelnyk@gmail.com", "Senior", 35000);
-INSERT INTO employee VALUES (4, "Lapko Zoriana",'380623045324', "zorianasmm@gmail.com", "Senior", 38000);
-INSERT INTO employee VALUES (5, "Khomenko Anna", '380987945247', "annakhomenko@gmail.com", "Junior", 27000);
-INSERT INTO employee VALUES (6, "Opanasenko Lilia", '380958329539', "lilia@gmail.com", "Junior", 28000);
-INSERT INTO employee VALUES (7, "Grynchuk Olena", '380952347652', "grynchuk@gmail.com", "Junior", 20000);
-INSERT INTO employee VALUES (8, "Kovalenko Olga", '380954712345', "olga.kov@gmail.com", "Middle", 32000);
-INSERT INTO employee VALUES (9, "Ivanova Anastasia", '380989876543', "anastasia.ivanova@gmail.com", "Middle", 30000);
-INSERT INTO employee VALUES (10, "Petrov Ivan", '380955678912', "ivan.petrov@gmail.com", "Senior", 35000);
-INSERT INTO employee VALUES (11, "Antonov Dmitry", '380976543210', "dmitry.antonov@gmail.com", "Senior", 38000);
-INSERT INTO employee VALUES (12, "Sidorova Elena", '380931234567', "elena.sidorova@gmail.com", "Junior", 27000);
-INSERT INTO employee VALUES (13, "Kozlova Maria", '380967890123', "maria.kozlova@gmail.com", "Middle", 25000);
-INSERT INTO employee VALUES (14, "Voloshyna Yuliia", '380922345678', "yuliia.voloshyna@gmail.com", "Middle", 28000);
-INSERT INTO employee VALUES (15, "Ishchenko Andrii", '380964567890', "andrii.ishchenko@gmail.com", "Senior", 40000);
-INSERT INTO employee VALUES (16, "Sokolova Natalia", '380934567890', "natalia.sokolova@gmail.com", "Senior", 35000);
-INSERT INTO employee VALUES (17, "Zaitseva Yana", '380978901234', "yana.zaitseva@gmail.com", "Junior", 23000);
+INSERT INTO employee VALUES (1, 'Gaiova Kateryna', '380956471324', 'katerynag@gmail.com', 'Junior', 25000);
+INSERT INTO employee VALUES (2, 'Lyskova Mariia', '380953671324', 'lyskovam@gmail.com', 'Middle', 30000);
+INSERT INTO employee VALUES (3, 'Melnyk Olesia', '380957451383', 'olesiamelnyk@gmail.com', 'Senior', 35000);
+INSERT INTO employee VALUES (4, 'Lapko Zoriana', '380623045324', 'zorianasmm@gmail.com', 'Senior', 38000);
+INSERT INTO employee VALUES (5, 'Khomenko Anna', '380987945247', 'annakhomenko@gmail.com', 'Junior', 27000);
+INSERT INTO employee VALUES (6, 'Opanasenko Lilia', '380958329539', 'lilia@gmail.com', 'Junior', 28000);
+INSERT INTO employee VALUES (7, 'Grynchuk Olena', '380952347652', 'grynchuk@gmail.com', 'Junior', 20000);
+INSERT INTO employee VALUES (8, 'Kovalenko Olga', '380954712345', 'olga.kov@gmail.com', 'Middle', 32000);
+INSERT INTO employee VALUES (9, 'Ivanova Anastasia', '380989876543', 'anastasia.ivanova@gmail.com', 'Middle', 30000);
+INSERT INTO employee VALUES (10, 'Petrov Ivan', '380955678912', 'ivan.petrov@gmail.com', 'Senior', 35000);
+INSERT INTO employee VALUES (11, 'Antonov Dmitry', '380976543210', 'dmitry.antonov@gmail.com', 'Senior', 38000);
+INSERT INTO employee VALUES (12, 'Sidorova Elena', '380931234567', 'elena.sidorova@gmail.com', 'Junior', 27000);
+INSERT INTO employee VALUES (13, 'Kozlova Maria', '380967890123', 'maria.kozlova@gmail.com', 'Middle', 25000);
+INSERT INTO employee VALUES (14, 'Voloshyna Yuliia', '380922345678', 'yuliia.voloshyna@gmail.com', 'Middle', 28000);
+INSERT INTO employee VALUES (15, 'Ishchenko Andrii', '380964567890', 'andrii.ishchenko@gmail.com', 'Senior', 40000);
+INSERT INTO employee VALUES (16, 'Sokolova Natalia', '380934567890', 'natalia.sokolova@gmail.com', 'Senior', 35000);
+INSERT INTO employee VALUES (17, 'Zaitseva Yana', '380978901234', 'yana.zaitseva@gmail.com', 'Junior', 23000);
+
 
 # appointment table
 INSERT INTO appointment VALUES (1, 1, 1, 3, '2024-03-03 14:30:00', 'done');
