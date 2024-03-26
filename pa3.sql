@@ -310,3 +310,68 @@ WHERE NOT EXISTS(
         FROM appointment a
         WHERE a.id = p.appointment_id
     );
+
+
+
+-- customers who had appointments in the past and have appointments in the future
+
+(SELECT c.name , c.phone, a.customer_id
+FROM appointment a
+         INNER JOIN customer c ON c.id = a.customer_id
+WHERE DATE(a.date_time) >= CURRENT_DATE)
+INTERSECT
+(SELECT c.name , c.phone, a.customer_id
+FROM appointment a
+         INNER JOIN customer c ON c.id = a.customer_id
+WHERE DATE(a.date_time) < CURRENT_DATE
+  AND a.status = 'done');
+
+-- select products that were either used by Vira or have been used 8+ times
+
+SELECT p.name, p.id, p.cost
+FROM product p
+         INNER JOIN services2products s2p ON s2p.product_id = p.id
+         INNER JOIN service s ON s.id = s2p.service_id
+         INNER JOIN appointment a ON a.service_id = s.id
+         INNER JOIN customer c ON c.id = a.customer_id
+WHERE (c.name = 'Vira')
+UNION
+SELECT p.name, p.id, p.cost
+FROM product p
+WHERE 8 <= (
+    SELECT COUNT(*)
+    FROM services2products s2p
+             INNER JOIN service s ON s.id = s2p.service_id
+             INNER JOIN appointment a ON a.service_id = s.id
+    WHERE s2p.product_id = p.id
+);
+
+-- select all products that were either used in last month or used 8+times,
+-- products are shown in table as many times as they complied with rules
+
+SELECT p.name, p.id, p.cost
+FROM product p
+         INNER JOIN services2products s2p ON s2p.product_id = p.id
+         INNER JOIN service s ON s.id = s2p.service_id
+         INNER JOIN appointment a ON a.service_id = s.id
+WHERE (DATE(a.date_time) > CURRENT_DATE - 30)
+UNION ALL
+SELECT p.name, p.id, p.cost
+FROM product p
+WHERE 8 <= (
+    SELECT COUNT(*)
+    FROM services2products s2p
+             INNER JOIN service s ON s.id = s2p.service_id
+             INNER JOIN appointment a ON a.service_id = s.id
+    WHERE s2p.product_id = p.id
+);
+
+-- select all employee that have had more than 5 services and have salary <=40000
+
+SELECT *
+FROM employee e
+WHERE 5 < (SELECT COUNT(*)
+           FROM appointment a
+           WHERE a.employee_id = e.id)
+EXCEPT SELECT * FROM employee e
+           WHERE e.salary > 40000;
