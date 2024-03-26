@@ -210,3 +210,103 @@ WHERE NOT EXISTS(
                 a.employee_id = e.id
           AND DATE(a.date_time) > DATE(CURRENT_DATE) - INTERVAL 90 DAY
     );
+
+
+
+-- DELETE
+-- = with non-correlated subqueries result
+-- delete employee with the highest salary
+DELETE FROM employee e
+WHERE e.salary = (
+    SELECT MAX(e2.salary)
+    FROM employee e2
+);
+
+-- IN with non-correlated subqueries result
+-- delete payments that are marked to happened more than 100000 days ago
+DELETE FROM payment p
+WHERE p.appointment_id IN(
+    SELECT p2.appointment_id
+    FROM payment p2
+    WHERE DATE(p2.date_time) < CURRENT_DATE - INTERVAL 100000 DAY
+);
+
+-- NOT IN with non-correlated subqueries result
+-- delete all payments with amount NOT from 5 to 9000000 hryvnas
+DELETE FROM payment p
+WHERE p.appointment_id NOT IN (
+    SELECT p2.appointment_id
+    FROM payment p2
+    WHERE p2.amount BETWEEN 5 AND 9000000
+);
+
+-- EXISTS with non-correlated subqueries result
+-- delete all services2products records if there is s2p.product_id which is negative
+DELETE FROM services2products
+WHERE EXISTS(
+              SELECT 1
+              FROM services2products s2p
+              WHERE s2p.product_id < 0
+          );
+
+-- NOT EXISTS with non-correlated subqueries result
+-- delete all employee2service records if there is no employee with salary > 10000
+DELETE FROM employee2service
+WHERE NOT EXISTS(
+        SELECT 1
+        FROM employee e
+        WHERE e.salary > 10000
+    );
+
+-- = with correlated subqueries result
+-- delete products which are not used in services
+DELETE
+FROM product
+WHERE 0 = (
+    SELECT COUNT(*)
+    FROM services2products
+    WHERE services2products.product_id = product.id
+);
+
+-- IN with correlated subqueries result
+-- delete all payments where Price is not equal to payment amount
+DELETE
+FROM payment p
+WHERE p.appointment_id IN (
+    SELECT a.id
+    FROM appointment a
+             INNER JOIN service s ON a.service_id = s.id
+    WHERE s.price != p.amount
+);
+
+-- NOT IN with correlated subqueries result
+-- delete all payments where Price is not equal to payment amount
+DELETE
+FROM payment p
+WHERE p.appointment_id NOT IN (
+    SELECT a.id
+    FROM appointment a
+             INNER JOIN service s ON a.service_id = s.id
+    WHERE s.price = p.amount
+);
+
+-- EXISTS with correlated subqueries result
+-- delete employee2service info about employee with email katerynag@gmail.com
+DELETE
+FROM employee2service e2s
+WHERE EXISTS(
+              SELECT 1
+              FROM employee e
+              WHERE e2s.employee_id = e.id
+                AND e.email = 'katerynag@gmail.com'
+          );
+
+-- NOT EXISTS with correlated subqueries result
+-- delete payment for which there is no appointment
+DELETE
+FROM payment p
+WHERE NOT EXISTS(
+        SELECT 1
+        FROM appointment a
+        WHERE a.id = p.appointment_id
+    );
