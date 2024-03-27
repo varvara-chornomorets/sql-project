@@ -1,56 +1,60 @@
 ﻿use schema_salon;
 
-# SELECT
-# = with non-correlated subqueries result
-# Select employee with the biggest salary
-SELECT *
-FROM employee
-WHERE salary = (SELECT MAX(salary) FROM employee);
+-- SELECT
+-- = with non-correlated subqueries result
+-- Select employee with the biggest salary
+SELECT e.name, e.email, e.salary
+FROM employee e
+WHERE e.salary = (SELECT MAX(salary) FROM employee);
 
-# IN with non-correlated subqueries result
-# Select all appointments with service price > 2000
-SELECT *
-FROM appointment
-WHERE service_id IN (
+-- IN with non-correlated subqueries result
+-- Select all appointments with service price > 2000
+SELECT a.id, c.name AS customer_name, s.name AS service_name, s.price, a.date_time, a.status
+FROM appointment a
+JOIN customer c ON a.customer_id = c.id
+JOIN service s ON a.service_id = s.id
+WHERE a.service_id IN (
     SELECT id
     FROM service
     WHERE price > 2000
 );
 
-# NOT IN with non-correlated subqueries result
-# Select all appointments with service price <= 2000
-SELECT *
-FROM appointment
-WHERE service_id NOT IN (
+-- NOT IN with non-correlated subqueries result
+-- Select all appointments with service price <= 2000
+SELECT a.id, c.name AS customer_name, s.name AS service_name, s.price, a.date_time, a.status
+FROM appointment a
+JOIN customer c ON a.customer_id = c.id
+JOIN service s ON a.service_id = s.id
+WHERE a.service_id NOT IN (
     SELECT id
     FROM service
     WHERE price > 2000
 );
 
-# EXISTS with non-correlated subqueries result
-# Select all info about all services if there exists employee with salary > 25000
-SELECT *
-FROM service
+-- EXISTS with non-correlated subqueries result
+-- Select all info about all services if there exists employee with salary > 25000
+SELECT s.id, s.name, s.description, s.duration, s.price
+FROM service s
 WHERE EXISTS (
-              SELECT *
+              SELECT 1
               FROM employee
               WHERE salary > 25000
           );
 
-# NOT EXISTS with non-correlated subqueries result
-# Select all info about all products if there does not exist payment with amount 720
-SELECT *
-FROM product
+-- NOT EXISTS with non-correlated subqueries result
+-- Select all info about all products if there does not exist payment with amount 720
+SELECT p.id, p.name, p.descrirtion, p.quantity, p.cost
+FROM product p
 WHERE NOT EXISTS (
-        SELECT *
+        SELECT 1
         FROM payment
         WHERE amount = 720
     );
 
 
-# = with correlated subqueries result
-# Customers who made exactly 2 appointments
-SELECT *
+-- = with correlated subqueries result
+-- Customers who made exactly 2 appointments
+SELECT c.name, c.phone, c.email, c.address
 FROM customer c
 WHERE 2 = (
     SELECT COUNT(*)
@@ -58,9 +62,9 @@ WHERE 2 = (
     WHERE a.customer_id = c.id
 );
 
-# IN with correlated subqueries result
-# Select services which were cancelled
-SELECT *
+-- IN with correlated subqueries result
+-- Select services which were cancelled
+SELECT s.id, s.name, s.description, s.duration, s.price
 FROM service s
 WHERE s.id IN (
     SELECT a.service_id
@@ -69,9 +73,9 @@ WHERE s.id IN (
       AND a.status = 'cancelled'
 );
 
-# NOT IN with correlated subqueries result
-# Select all customers that did not make payment for more than 1000 hryvnas
-SELECT *
+-- NOT IN with correlated subqueries result
+-- Select all customers that did not make payment for more than 1000 hryvnas
+SELECT c.name, c.phone, c.email, c.address
 FROM customer c
 WHERE c.id NOT IN (
     SELECT p.customer_id
@@ -81,9 +85,9 @@ WHERE c.id NOT IN (
 );
 
 
-# EXISTS with correlated subqueries result
-# select all employees who have at least 1 appointment this month
-SELECT *
+-- EXISTS with correlated subqueries result
+-- select all employees who have at least 1 appointment this month
+SELECT e.name, e.email, e.position, e.salary
 FROM employee e
 WHERE EXISTS(
               SELECT 1
@@ -93,9 +97,9 @@ WHERE EXISTS(
           );
 
 
-# NOT EXISTS with correlated subqueries result
-# select all products that are not connected with any services
-SELECT *
+-- NOT EXISTS with correlated subqueries result
+-- select all products that are not connected with any services
+SELECT p.id, p.name, p.descrirtion, p.quantity, p.cost
 FROM product p
 WHERE NOT EXISTS(
         SELECT 1
