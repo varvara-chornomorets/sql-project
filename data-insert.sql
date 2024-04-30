@@ -1,12 +1,4 @@
 ﻿use schema_salon;
-DELETE FROM services2products;
-DELETE FROM employee2service;
-DELETE FROM payment;
-DELETE FROM appointment;
-DELETE FROM employee;
-DELETE FROM customer;
-DELETE FROM product;
-DELETE FROM service;
 # service table 
 INSERT INTO service VALUES(1, 'Manicure', 'The service includes nail polish or gel removal, nail polishing and shaping, cuticle removing, application of oil, cream and hand massage.',
                            120, 720);
@@ -321,6 +313,12 @@ INSERT INTO appointment VALUES (162, 30, 1, 3, '2024-05-03 11:30:00', 'arranged'
 INSERT INTO appointment VALUES (163, 5, 6, 2, '2024-05-03 14:15:00', 'arranged');
 INSERT INTO appointment VALUES (164, 14, 11, 3, '2024-05-03 16:00:00', 'arranged');
 INSERT INTO appointment VALUES (165, 23, 15, 16, '2024-05-03 18:45:00', 'arranged');
+INSERT INTO appointment VALUES (166, 8, 2, 3, '2024-04-30 08:30:00', 'arranged');
+INSERT INTO appointment VALUES (167, 17, 7, 6, '2024-04-30 10:45:00', 'arranged');
+INSERT INTO appointment VALUES (168, 26, 12, 12, '2024-04-30 13:00:00', 'arranged');
+INSERT INTO appointment VALUES (169, 35, 5, 11, '2024-04-30 15:15:00', 'arranged');
+INSERT INTO appointment VALUES (170, 3, 9, 10, '2024-04-30 17:30:00', 'arranged');
+INSERT INTO appointment VALUES (171, 12, 14, 9, '2024-04-30 19:45:00', 'arranged');
 
 
 
@@ -487,6 +485,13 @@ INSERT INTO payment VALUES(162, (SELECT customer_id FROM appointment WHERE id = 
 INSERT INTO payment VALUES(163, (SELECT customer_id FROM appointment WHERE id = 163), '2024-05-03 14:15:00', (SELECT price FROM service WHERE id = 6), 'NA');
 INSERT INTO payment VALUES(164, (SELECT customer_id FROM appointment WHERE id = 164), '2024-05-03 16:00:00', (SELECT price FROM service WHERE id = 11), 'NA');
 INSERT INTO payment VALUES(165, (SELECT customer_id FROM appointment WHERE id = 165), '2024-05-03 18:45:00', (SELECT price FROM service WHERE id = 15), 'NA');
+INSERT INTO payment VALUES(166, (SELECT customer_id FROM appointment WHERE id = 166), '2024-04-30 08:30:00', (SELECT price FROM service WHERE id = 2), 'NA');
+INSERT INTO payment VALUES(167, (SELECT customer_id FROM appointment WHERE id = 167), '2024-04-30 10:45:00', (SELECT price FROM service WHERE id = 7), 'NA');
+INSERT INTO payment VALUES(168, (SELECT customer_id FROM appointment WHERE id = 168), '2024-04-30 13:00:00', (SELECT price FROM service WHERE id = 12), 'NA');
+INSERT INTO payment VALUES(169, (SELECT customer_id FROM appointment WHERE id = 169), '2024-04-30 15:15:00', (SELECT price FROM service WHERE id = 5), 'NA');
+INSERT INTO payment VALUES(170, (SELECT customer_id FROM appointment WHERE id = 170), '2024-04-30 17:30:00', (SELECT price FROM service WHERE id = 9), 'NA');
+INSERT INTO payment VALUES(171, (SELECT customer_id FROM appointment WHERE id = 171), '2024-04-30 19:45:00', (SELECT price FROM service WHERE id = 14), 'NA');
+
 
 # employee2service table
 INSERT IGNORE INTO employee2service (employee_id, service_id)

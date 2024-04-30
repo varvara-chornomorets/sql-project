@@ -1,5 +1,6 @@
 use schema_salon;
 
+-- DROP VIEW employee_schedule;
 
 CREATE VIEW employee_schedule(
     employee_name,
