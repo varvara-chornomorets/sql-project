@@ -17,6 +17,6 @@ AS
     INNER JOIN service s2 ON a.service_id = s2.id
     WHERE DATE(a.date_time) = CURRENT_DATE
     GROUP BY a.id
-    ORDER BY e.position DESC, e.id;
+    ORDER BY e.position DESC, e.id, a.date_time;
 
 SELECT * FROM employee_schedule;
