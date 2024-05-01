@@ -1,15 +1,15 @@
-use schema_salon;
+USE schema_salon;
 
--- DROP VIEW employee_schedule;
+DROP VIEW employee_schedule_view;
 
-CREATE VIEW employee_schedule(
+CREATE VIEW employee_schedule_view(
     employee_name,
     employee_services,
     time_range,
     service_kind
     )
 AS
-    SELECT e.name AS employee_name, GROUP_CONCAT(s.name) AS services, CONCAT(TIME(a.date_time),'-', TIME(DATE_ADD(a.date_time, INTERVAL s2.duration MINUTE))) AS time_range,
+    SELECT e.name AS employee_name, GROUP_CONCAT(s.name) AS services, CONCAT(DATE_FORMAT(a.date_time, '%k:%i'),'-', DATE_FORMAT(DATE_ADD(a.date_time, INTERVAL s2.duration MINUTE), '%k:%i')) AS time_range,
     s2.name AS service_name
     FROM appointment a
     INNER JOIN employee e ON a.employee_id = e.id
@@ -20,4 +20,4 @@ AS
     GROUP BY a.id
     ORDER BY e.position DESC, e.id, a.date_time;
 
-SELECT * FROM employee_schedule;
+SELECT * FROM employee_schedule_view;

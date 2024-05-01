@@ -1,4 +1,15 @@
 ﻿use schema_salon;
+
+
+DELETE FROM services2products;
+DELETE FROM employee2service;
+DELETE FROM payment;
+DELETE FROM appointment;
+DELETE FROM employee;
+DELETE FROM customer;
+DELETE FROM product;
+DELETE FROM service;
+
 # service table 
 INSERT INTO service VALUES(1, 'Manicure', 'The service includes nail polish or gel removal, nail polishing and shaping, cuticle removing, application of oil, cream and hand massage.',
                            120, 720);
@@ -140,15 +151,15 @@ INSERT INTO employee VALUES (5, 'Khomenko Anna', '380987945247', 'annakhomenko@g
 INSERT INTO employee VALUES (6, 'Opanasenko Lilia', '380958329539', 'lilia@gmail.com', 'Junior', 28000);
 INSERT INTO employee VALUES (7, 'Grynchuk Olena', '380952347652', 'grynchuk@gmail.com', 'Junior', 20000);
 INSERT INTO employee VALUES (8, 'Kovalenko Olga', '380954712345', 'olga.kov@gmail.com', 'Middle', 32000);
-INSERT INTO employee VALUES (9, 'Ivanova Anastasia', '380989876543', 'anastasia.ivanova@gmail.com', 'Middle', 30000);
-INSERT INTO employee VALUES (10, 'Petrov Ivan', '380955678912', 'ivan.petrov@gmail.com', 'Senior', 35000);
-INSERT INTO employee VALUES (11, 'Antonov Dmitry', '380976543210', 'dmitry.antonov@gmail.com', 'Senior', 38000);
-INSERT INTO employee VALUES (12, 'Sidorova Elena', '380931234567', 'elena.sidorova@gmail.com', 'Junior', 27000);
-INSERT INTO employee VALUES (13, 'Kozlova Maria', '380967890123', 'maria.kozlova@gmail.com', 'Middle', 25000);
-INSERT INTO employee VALUES (14, 'Voloshyna Yuliia', '380922345678', 'yuliia.voloshyna@gmail.com', 'Middle', 28000);
-INSERT INTO employee VALUES (15, 'Ishchenko Andrii', '380964567890', 'andrii.ishchenko@gmail.com', 'Senior', 40000);
-INSERT INTO employee VALUES (16, 'Sokolova Natalia', '380934567890', 'natalia.sokolova@gmail.com', 'Senior', 35000);
-INSERT INTO employee VALUES (17, 'Zaitseva Yana', '380978901234', 'yana.zaitseva@gmail.com', 'Junior', 23000);
+INSERT INTO employee VALUES (9, 'Anastasiia Shevchenko', '380989876543', 'anastasiia.shevchenko@gmail.com', 'Middle', 30000);
+INSERT INTO employee VALUES (10, 'Ivan Kovalchuk', '380955678912', 'ivan.kovalchuk@gmail.com', 'Senior', 35000);
+INSERT INTO employee VALUES (11, 'Dmytro Bondarenko', '380976543210', 'dmytro.bondarenko@gmail.com', 'Senior', 38000);
+INSERT INTO employee VALUES (12, 'Olena Tkachenko', '380931234567', 'olena.tkachenko@gmail.com', 'Junior', 27000);
+INSERT INTO employee VALUES (13, 'Mariia Kravchenko', '380967890123', 'mariia.kravchenko@gmail.com', 'Middle', 25000);
+INSERT INTO employee VALUES (14, 'Yuliia Voloshchuk', '380922345678', 'yuliia.voloshchuk@gmail.com', 'Middle', 28000);
+INSERT INTO employee VALUES (15, 'Andrii Shevchuk', '380964567890', 'andrii.shevchuk@gmail.com', 'Senior', 40000);
+INSERT INTO employee VALUES (16, 'Nataliia Melnychuk', '380934567890', 'nataliia.melnychuk@gmail.com', 'Senior', 35000);
+INSERT INTO employee VALUES (17, 'Yana Kovalenko', '380978901234', 'yana.kovalenko@gmail.com', 'Junior', 23000);
 
 
 # appointment table
