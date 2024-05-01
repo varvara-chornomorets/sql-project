@@ -1,7 +1,7 @@
 ![812de814994dde0c0f48e4108bccab44_2_-removebg-preview](https://github.com/varvara-chornomorets/sql-project/assets/118897631/b487df22-dc9b-4652-9728-ae4188a61724)
 
 # Beauty salon management system
-> Mysql relational database
+> MySQL relational database
 
 System to keep track of appointments, transactions, customers, products and employees of Beauty salon. University project.
 
